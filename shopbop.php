@@ -325,7 +325,7 @@ function createProduc($name,$brand,$images,$imageall,$idshopbop,$category,$price
 	$pro->sizefit = $sizefit;
 	$pro->id_manufacturer = 0;
 	$pro->id_supplier = 0;
-	$pro->quantity = 1;
+	//$pro->quantity = 1;
 	$pro->minimal_quantity = 1;
 	$pro->additional_shipping_cost = 0; 
 	$pro->wholesale_price = 0;
@@ -344,6 +344,8 @@ function createProduc($name,$brand,$images,$imageall,$idshopbop,$category,$price
 	$pro->online_only = 1;
     $pro->link_rewrite = Tools::link_rewrite($pro->name);	
 	$pro->add();
+	//StockAvailable::setQuantity($id_product, $id_product_attribute, $quantity);
+StockAvailable::setQuantity($pro->id, null, 10);
 	 //ps_category_product getCategories()
     $pro->addToCategories(array($category));
 
