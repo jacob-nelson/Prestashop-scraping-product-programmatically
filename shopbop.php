@@ -305,7 +305,7 @@ function createCategory($name, $metatitle, $metadescrip, $metakey,$parent)
 }
 //return id to category
 
-function createProduc($name,$brand,$images,$imageall,$idshopbop,$category,$price,$priceAllRed,$descrip,$sizes,$textures,$metatitle,$metadescrip,$metakey,$sizefit)
+function createProduc($name,$brand,$images,$imageall,$idshopbop,$category,$price,$priceAllRed,$descrip,$description_short,$sizes,$textures,$metatitle,$metadescrip,$metakey,$sizefit)
 {
 	$context = Context::getContext();
 	$pro = new Product (null,false,Context::getContext()->language->id);
@@ -318,6 +318,7 @@ function createProduc($name,$brand,$images,$imageall,$idshopbop,$category,$price
 	$pro->imageproduc = $images;
 	$pro->reference = $idshopbop;
 	$pro->description = $descrip;
+	$pro->description_short = $description_short;
 	$pro->meta_title = $metatitle;
 	$pro->meta_description = $metadescrip;
 	$pro->meta_keywords = $metakey;
